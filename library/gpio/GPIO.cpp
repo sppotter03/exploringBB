@@ -56,7 +56,7 @@ GPIO::GPIO(int number) {
 	s << "gpio" << number;
 	this->name = string(s.str());
 	this->path = GPIO_PATH + this->name + "/";
-	this->exportGPIO();
+//	this->exportGPIO();
 	// need to give Linux time to set up the sysfs structure
 	usleep(250000); // 250ms delay
 }
@@ -291,7 +291,7 @@ int GPIO::waitForEdge(CallbackType callback){
 }
 
 GPIO::~GPIO() {
-	this->unexportGPIO();
+//	this->unexportGPIO();
 }
 
 } /* namespace exploringBB */
